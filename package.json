@@ -1,0 +1,19 @@
+{
+  "name": "weirdwx",
+  "version": "0.5.0",
+  "description": "Personal hacking project around weird weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nearwalden/weirdwx.git"
+  },
+  "author": "Dave Douglas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nearwalden/weirdwx/issues"
+  },
+  "homepage": "https://github.com/nearwalden/weirdwx#readme"
+}
