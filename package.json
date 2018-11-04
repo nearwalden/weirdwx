@@ -2,7 +2,7 @@
   "name": "weirdwx",
   "version": "0.5.0",
   "description": "Personal hacking project around weird weather",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nearwalden/weirdwx/issues"
   },
-  "homepage": "https://github.com/nearwalden/weirdwx#readme"
+  "homepage": "https://github.com/nearwalden/weirdwx#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
