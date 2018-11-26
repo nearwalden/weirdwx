@@ -1,8 +1,0 @@
-# 
-
-## Maps
-
-Nowell - tile serving architecture
-
-Colors - mechanisms are there, but will take awhile to add in the customization features
-
