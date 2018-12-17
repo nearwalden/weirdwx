@@ -16,15 +16,19 @@ app.get('/simple', (req, res) =>
 		res.send({lat: req.query.lat,
 							lon: req.query.lon}))
 							
-app.get('/summary', (req, res) => 
-		wx.wxSummary(req.query.lat, req.query.lon, function(err, summary) {
-			if (err) {
-				res.send({err: err});
-			}
-			else {
-				res.send({err: null,
-						data: summary
-						});
-			}}))
+app.get('/summary', (req, res) => {
+	var startTime = new Date();
+	wx.wxSummary(req.query.lat, req.query.lon, function(err, summary) {
+		if (err) {
+			res.send({err: err});
+		}
+		else {
+			var endTime = new Date();
+			summary['elapsed_time'] = endTime.getTime() - startTime.getTime();
+			res.send({err: null,
+					data: summary
+					});
+		}})
+	})
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Weather Explorer on port ${port}!`))
