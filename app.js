@@ -16,15 +16,24 @@ app.get('/simple', (req, res) =>
 		res.send({lat: req.query.lat,
 							lon: req.query.lon}))
 							
+const defaultVersion = "v3";
+							
 app.get('/summary', (req, res) => {
 	var startTime = new Date();
-	wx.wxSummary(req.query.lat, req.query.lon, function(err, summary) {
+	if ('v' in req.query) {
+		var v = req.query.v;
+	}
+	else {
+		var v = defaultVersion;
+	}
+	wx.wxSummary(req.query.lat, req.query.lon, v, function(err, summary) {
 		if (err) {
 			res.send({err: err});
 		}
 		else {
 			var endTime = new Date();
 			summary['elapsed_time'] = endTime.getTime() - startTime.getTime();
+			summary['version'] = v;
 			res.send({err: null,
 					data: summary
 					});
