@@ -16,7 +16,7 @@ app.get('/simple', (req, res) =>
 		res.send({lat: req.query.lat,
 							lon: req.query.lon}))
 							
-const defaultVersion = "v3";
+const defaultVersion = "v3bulk";
 							
 app.get('/summary', (req, res) => {
 	var startTime = new Date();
@@ -34,7 +34,7 @@ app.get('/summary', (req, res) => {
 			var endTime = new Date();
 			summary['elapsed_time'] = endTime.getTime() - startTime.getTime();
 			summary['version'] = v;
-			res.send({err: null,
+			res.send({err: err,
 					data: summary
 					});
 		}})
